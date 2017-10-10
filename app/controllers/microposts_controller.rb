@@ -1,15 +1,13 @@
 class MicropostsController < ApplicationController
+
+  http_basic_authenticate_with name: "dhh", password: "secret", except: :index
+
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
 
   # GET /microposts
   # GET /microposts.json
   def index
     @microposts = Micropost.all
-  end
-
-  # GET /microposts/1
-  # GET /microposts/1.json
-  def show
   end
 
   # GET /microposts/new
